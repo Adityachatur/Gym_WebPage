@@ -1,10 +1,10 @@
-import React,{useEffect} from 'react'
+import React, { useEffect } from 'react'
 import AOS from "aos";
 import "aos/dist/aos.css";
 const Priceboxcard = () => {
     useEffect(() => {
         AOS.init({
-            duration: 3000,
+            
         });
     }, []);
     return (
@@ -17,7 +17,7 @@ const Priceboxcard = () => {
                         <p className="lg:w-2/3 mx-auto leading-relaxed text-3xl uppercase text-white font-Montserrat">Choose your pricing plan</p>
                     </div>
                     <div className="flex flex-wrap -m-4 justify-center text-center">
-                        <div class="card p-4 md:w-1/4 sm:w-1/2 w-full" data-aos="fade-right">
+                        <div class="card p-4 md:w-1/4 sm:w-1/2 w-full" data-aos="fade-down"  data-aos-duration="2000">
                             <div class="border-2px-4 py-6  bg-gray-900 pricecard">
                                 <div className='pricecard-content'>
                                     <h2 className='text-white font-bold font-Oswald text-3xl heading'>Class drop-in</h2>
@@ -37,7 +37,7 @@ const Priceboxcard = () => {
                                 </div>
                             </div>
                         </div>
-                        <div class="card p-4 md:w-1/4 sm:w-1/2 w-full" data-aos="fade-up">
+                        <div class="card p-4 md:w-1/4 sm:w-1/2 w-full" data-aos="fade-down"  data-aos-duration="2500">
                             <div class="border-2px-4 py-6  bg-gray-900 pricecard">
                                 <div className='pricecard-content'>
                                     <h2 className='text-white font-bold font-Oswald text-3xl heading'>Class drop-in</h2>
@@ -57,7 +57,7 @@ const Priceboxcard = () => {
                                 </div>
                             </div>
                         </div>
-                        <div class="card p-4 md:w-1/4 sm:w-1/2 w-full" data-aos="fade-left">
+                        <div class="card p-4 md:w-1/4 sm:w-1/2 w-full" data-aos="fade-down"  data-aos-duration="3000">
                             <div class="border-2px-4 py-6  bg-gray-900 pricecard">
                                 <div className='pricecard-content'>
                                     <h2 className='text-white font-bold font-Oswald text-3xl heading'>Class drop-in</h2>

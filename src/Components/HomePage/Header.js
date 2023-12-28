@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <div>
-      <Carousel className="">
+      <Carousel className="h-lvh">
         <div className="relative h-full w-full">
           <img
             src={Headingimg}
