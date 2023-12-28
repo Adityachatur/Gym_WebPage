@@ -4,11 +4,11 @@ import React from "react";
 
 const WhatsAppButton = () => {
   const whatsappNumber = "9552314201";
-  const whatsappMessage = "Please help me to join gym"
+  const whatsappMessage = "Please help me to join gym";
 
   const openWhatsApp = () => {
     window.open(
-      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent({ whatsappMessage })}`,
+      `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`,
       "_blank"
     );
   };

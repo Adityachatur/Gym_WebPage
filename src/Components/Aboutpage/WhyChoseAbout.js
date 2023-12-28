@@ -27,7 +27,7 @@ const WhyChoseAbout = () => {
     return (
         <div>
             <div className=" mx-auto mb-20 flex lg:flex-row md:flex-col sm:flex-col flex-col">
-                <div className="w-full sm:w-full">
+                <div className="w-full sm:w-11/12">
                     <img
                         className="object-cover w-full h-full"
                         src={aboutusimg}

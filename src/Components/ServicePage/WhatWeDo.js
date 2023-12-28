@@ -21,11 +21,11 @@ const WhatWeDo = () => {
             </div>
 
             <div className="flex flex-wrap lg:w-9/12 mx-auto w-full">
-                <div className="w-1/2 lg:w-1/2 xl:w-1/4   h-64" data-aos="fade-down-right">
+                <div className="w-1/2 lg:w-1/2 xl:w-1/4 px-1   h-64" data-aos="fade-down">
                     <img src={img1} alt="" className="object-cover w-full h-full" />
                 </div>
 
-                <div className="w-1/2 lg:w-1/2 xl:w-1/4  bg-gray-900  h-64 servicecard" data-aos="fade-down-left">
+                <div className="w-1/2 lg:w-1/2 xl:w-1/4 px-1  bg-gray-900  h-64 servicecard" data-aos="fade-down">
                     <div className="flex flex-col py-6 px-3">
                         <p className="pt-10 lg:text-xl text-lg font-bold text-white">
                             Personal Training
@@ -40,11 +40,11 @@ const WhatWeDo = () => {
                     </div>
                 </div>
 
-                <div className="w-1/2 lg:w-1/2 xl:w-1/4   h-64" data-aos="fade-down-right">
+                <div className="w-1/2 lg:w-1/2 xl:w-1/4 px-1   h-64" data-aos="fade-down-right">
                     <img src={img2} alt="" className="object-cover w-full h-full" />
                 </div>
 
-                <div className="w-1/2 lg:w-1/2 xl:w-1/4  bg-gray-900  h-64 servicecard" data-aos="fade-down-left">
+                <div className="w-1/2 lg:w-1/2 xl:w-1/4 px-1  bg-gray-900  h-64 servicecard" data-aos="fade-down">
                     <div className="flex flex-col py-6 px-3">
                         <p className="pt-10 lg:text-xl text-lg font-bold text-white">
                             Group fitness classes
@@ -59,7 +59,7 @@ const WhatWeDo = () => {
                     </div>
                 </div>
 
-                <div className="w-1/2 lg:w-1/2 xl:w-1/4  bg-gray-900  h-64 servicecard" data-aos="fade-up-right">
+                <div className="w-1/2 lg:w-1/2 xl:w-1/4 px-1  bg-gray-900  h-64 servicecard" data-aos="fade-up">
                     <div className="flex flex-col py-6 px-3">
                         <p className="pt-10 lg:text-xl text-lg font-bold text-white">
                             Strength training
@@ -74,11 +74,11 @@ const WhatWeDo = () => {
                     </div>
                 </div>
 
-                <div className="w-1/2 lg:w-1/2 xl:w-1/4   h-64" data-aos="fade-up-left">
+                <div className="w-1/2 lg:w-1/2 xl:w-1/4 px-1   h-64" data-aos="fade-up">
                     <img src={img3} alt="" className="object-cover w-full h-full" />
                 </div>
 
-                <div className="w-1/2 lg:w-1/2 xl:w-1/4  bg-gray-900  h-64 servicecard" data-aos="fade-up-right">
+                <div className="w-1/2 lg:w-1/2 xl:w-1/4 px-1  bg-gray-900  h-64 servicecard" data-aos="fade-up">
                     <div className="flex flex-col py-6 px-3">
                         <p className="pt-10 lg:text-xl text-lg font-bold text-white">
                             Body building
@@ -93,7 +93,7 @@ const WhatWeDo = () => {
                     </div>
                 </div>
 
-                <div className="w-1/2 lg:w-1/2 xl:w-1/4   h-64" data-aos="fade-up-left">
+                <div className="w-1/2 lg:w-1/2 xl:w-1/4 px-1   h-64" data-aos="fade-up">
                     <img src={img4} alt="" className="object-cover w-full h-full" />
                 </div>
             </div>
