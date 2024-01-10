@@ -7,10 +7,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { UserInformation } from '../Firebase/Firebase';
-import { addDoc } from 'firebase/firestore';
+import { addDoc, query, getDocs, where } from 'firebase/firestore';
 import { TailSpin } from "react-loader-spinner";
 const DetailSend = () => {
     const [loading, setloading] = useState(false);
+    const [emailerror, setemailerror] = useState('');
+    const [contacterror, setcontacterror] = useState('');
+    const [nameerror, setnameerror] = useState('');
     const [form, setform] = useState({
         name: '',
         email: '',
@@ -19,10 +22,55 @@ const DetailSend = () => {
     });
 
 
+    const validname = (name) => {
+        return name.length > 5;
+    }
+
+    const validateEmail = (email) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    };
+
+    const validcontact = (contact) => {
+        return /^\d{10}$/.test(contact);
+    }
+
+
     const Formsubmit = async () => {
 
         try {
             setloading(true);
+            if (!validname(form.name)) {
+                setnameerror('name must greater than  5 characters..');
+                setloading(false);
+                return;
+            } else {
+                setnameerror('');
+            }
+            if (!validateEmail(form.email)) {
+                setemailerror('please enter the correct email....')
+                setloading(false);
+                return;
+            } else {
+                setemailerror('');
+            }
+
+            if (!validcontact(form.contact)) {
+                setcontacterror('please enter 10 digit contact number');
+                setloading(false);
+                return;
+            } else {
+                setcontacterror('');
+            }
+
+            const repeatemail = await getDocs(query(UserInformation, where('email', '==', form.email)));
+            if (repeatemail.size > 0) {
+                setemailerror(`Email already registered...Please enter another email address`);
+                setloading(false);
+                return;
+            } else {
+                setemailerror('');
+            }
+
             await addDoc(UserInformation, form);
             swal({
                 title: "Successfully Added",
@@ -96,21 +144,33 @@ const DetailSend = () => {
                             placeholder="Name"
                             value={form.name}
                             onChange={(e) => setform({ ...form, name: e.target.value })}
+                            required
                         />
+                        {nameerror && (
+                            <p className="text-white text-lg">{nameerror}</p>
+                        )}
                         <input
                             type="text"
                             className="w-full my-3 h-10 bg-gray-900 p-2 text-gray-400 text-sm placeholder-gray-700 focus:outline-none focus:ring focus:border-gray-500"
                             placeholder="Email"
                             value={form.value}
                             onChange={(e) => setform({ ...form, email: e.target.value })}
+                            required
                         />
+                        {emailerror && (
+                            <p className="text-white text-lg">{emailerror}</p>
+                        )}
                         <input
                             type="text"
                             className="w-full my-3 h-10 p-2 bg-gray-900 text-gray-400 text-sm placeholder-gray-700 focus:outline-none focus:ring focus:border-gray-500"
                             placeholder="Contact Number"
                             value={form.value}
                             onChange={(e) => setform({ ...form, contact: e.target.value })}
+                            required
                         />
+                        {contacterror && (
+                            <p className="text-white text-lg">{contacterror}</p>
+                        )}
                         <textarea
                             cols="10"
                             rows="5"
@@ -118,6 +178,7 @@ const DetailSend = () => {
                             placeholder="Message"
                             value={form.value}
                             onChange={(e) => setform({ ...form, message: e.target.value })}
+                            required
                         ></textarea>
                         <button
                             type="submit"
